@@ -1,0 +1,13 @@
+-> reelle Kodierung ->5 Nachkommastellen
+
+Nutzereingaben:
+    - Grenzen für Initialisierung von erster Population
+    - Anzahl der Start-Individuen
+    - Anzahl Variablen
+    - Anzahl der Generationen
+    - Anzahl der Individuen pro Generation
+    - Anzahl überführten (guten) Individuen in neue Generation
+    - Rekomkbinationswahrscheinlichkeit (später über Selektion)
+    - Mutationswahrscheinlichkeit + Mutationswert
+
+-> Fitnessfunktion/Bewertungsfunktion fest implementiert (vorerst)
