@@ -5,13 +5,59 @@ $launcher->startAction();
 
 class Launcher
 {
+    /**
+     * @var array
+     */
+    public static $numberRangeInitialPopulation = ['min' => -10, 'max' => 10];
+
+    /**
+     * @var int
+     */
+    public static $amountStartIndividuals = 10;
+
+    /**
+     * @var int
+     */
+    public static $amountVariables = 4;
+
+    /**
+     * @var int
+     */
+    public static $amountGenerations = 2000;
+
+    /**
+     * @var int
+     */
+    public static $amountIndividualsPerGeneration = 40;
+
+    /**
+     * @var int
+     */
+    public static $amountSurvivingIndividuals = 10;
+
+    /**
+     * in %
+     * @var int
+     */
+    public static $probabilityRecombination = 33;
+
+    /**
+     * in %
+     * @var int
+     */
+    public static $probabilityMutation = 5;
+
+    /**
+     * @var int
+     */
+    public static $valueMutation = 5;
+
     public function startAction()
     {
 
 //      alles aus Formular rausholen
 
-        $numberrangeInitalPopulation = ['min' => -10,
-                                        'max' => 10];
+        $numberrangeInitalPopulation = ['min' => -10, 'max' => 10];
         $amountStartIndividuals = 10;
         $amountVariables = 4;
         $amountGenerations = 2000;
