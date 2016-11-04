@@ -1,5 +1,8 @@
 <?php
 
+$launcher = new Launcher();
+$launcher->startAction();
+
 class Launcher
 {
     public function startAction()
@@ -29,8 +32,8 @@ class Launcher
 
             $individual['fitness'] = $this->applyFitnessfunction($individual);
             $tmp[] = $individual;
-            var_dump($individual);
-            echo '</br>';
+            //var_dump($individual);
+            //echo '</br>';
 
         }
         
@@ -40,22 +43,36 @@ class Launcher
             $pGen = $this->createGeneration($tmp, $amountIndividualsPerGeneration,
                     $amountSurvivingIndividuals, $propabilityRecombination,
                     $propabilityMutation, $valueMutation);
-            
+
+            $compare = function($a, $b) {
+                if($a['fitness'] == $b['fitness']) {
+                    return 0;
+                }
+
+                return ($a['fitness'] < $b['fitness']) ? -1 : 1;
+            };
+
+          //  echo 'Generation: ' . $i . '<br/>';
             $combined = array_merge($tmp, $pGen);
+          //  var_dump($combined);
+          //  echo '<br/>';
             //compare Fnktion um Fitness-Werte der Individuen zu vergleichen
-            usort($combined, "compare");
+            usort($combined, $compare);
+          //  var_dump($combined);
+          //  echo '<br/>';
             //unset($tmp);
             $tmp = array_slice($combined, 0, $amountSurvivingIndividuals);
             
         }
         
         $winner = $tmp[0];
+        var_dump($winner);
        //$nextGeneration = [$amountIndividualsPerGeneration];
 
 
-        return $this->render('TimHelloBundle:Evo:start.html.twig', array(
-            // ...
-        ));
+//        return $this->render('TimHelloBundle:Evo:start.html.twig', array(
+//            // ...
+//        ));
     }
 
     public function initiateAlgorithm(int $amountStartIndividuals,
