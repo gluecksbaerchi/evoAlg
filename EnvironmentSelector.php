@@ -10,7 +10,7 @@
 require_once "Launcher.php";
 require_once "Individual.php";
 
-class EnvironmentSelection
+class EnvironmentSelector
 {
     /**
      * @param Individual[] $parents
