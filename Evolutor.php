@@ -48,12 +48,12 @@ class Evolutor
      * in %
      * @var int
      */
-    public static $probabilityMutation = 5;
+    public static $probabilityMutation = 10;
 
     /**
      * @var int
      */
-    public static $valueMutation = 5;
+    public static $valueMutation = 10;
 
     public function startEvolution()
     {
@@ -124,9 +124,16 @@ class Evolutor
     }
     
     public static function random($a, $b) 
-    {        
-        $decimal = 10;        
-        $number = mt_rand($a*pow(10, $decimal), $b*pow(10, $decimal)) / pow(10, $decimal);        
+    {
+        $decimal = 6;
+        if ($a < $b) {
+            $min = $a * (10 ** $decimal);
+            $max = $b * (10 ** $decimal);
+        } else {
+            $max = $a * (10 ** $decimal);
+            $min = $b * (10 ** $decimal);
+        }
+        $number = rand($min, $max) / (10**$decimal);
         return $number;
     }
 }
