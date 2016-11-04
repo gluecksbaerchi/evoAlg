@@ -92,7 +92,7 @@ class Evolutor
         $individualValues = [];
 
         for($i = 0; $i < self::$amountVariables; $i++) {
-            $valueRandom = rand(self::$numberRangeInitialPopulation['min'],
+            $valueRandom = self::random(self::$numberRangeInitialPopulation['min'],
                 self::$numberRangeInitialPopulation['max']);
             $individualValues[$i] = $valueRandom;
         }
@@ -121,5 +121,12 @@ class Evolutor
             }
         }
         return $pGen;
+    }
+    
+    public static function random($a, $b) 
+    {        
+        $decimal = 10;        
+        $number = mt_rand($a*pow(10, $decimal), $b*pow(10, $decimal)) / pow(10, $decimal);        
+        return $number;
     }
 }

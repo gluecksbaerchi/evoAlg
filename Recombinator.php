@@ -9,7 +9,7 @@ class Recombinator
         $parentAValues = $parentA->getValues();
         $parentBValues = $parentB->getValues();
         for($i = 0; $i < count($parentAValues); $i++) {
-            $values[$i] = rand($parentAValues[$i], $parentBValues[$i]);
+            $values[$i] = Evolutor::random($parentAValues[$i], $parentBValues[$i]);
         }
         $child->setValues($values);
         return $child;
