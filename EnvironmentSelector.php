@@ -7,9 +7,6 @@
  * Time: 11:47
  */
 
-require_once "Launcher.php";
-require_once "Individual.php";
-
 class EnvironmentSelector
 {
     /**
@@ -28,7 +25,7 @@ class EnvironmentSelector
 
         $combined = array_merge($parents, $children);
         usort($combined, $compare);
-        return array_slice($combined, 0, Launcher::$amountSurvivingIndividuals);
+        return array_slice($combined, 0, Evolutor::$amountSurvivingIndividuals);
     }
 
     // Todo: other selection functions (roulette, turnament)

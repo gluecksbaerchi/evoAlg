@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Carolin
- * Date: 04.11.2016
- * Time: 11:39
- */
-
-require_once 'Individual.php';
-
 class FitnessCalculator
 {
     /**

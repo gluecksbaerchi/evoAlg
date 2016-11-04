@@ -1,7 +1,5 @@
 <?php
 
-require_once "Individual.php";
-
 class Recombinator
 {
     public static function random(Individual $parentA, Individual $parentB)

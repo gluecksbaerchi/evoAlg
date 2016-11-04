@@ -1,7 +1,5 @@
 <?php
 
-require_once "Individual.php";
-
 class Mutator
 {
     public static function constant(Individual $child)
@@ -10,7 +8,7 @@ class Mutator
         $mutatedChildValues = [];
         $arrayIndex = 0;
         foreach($child->getValues() as $value) {
-            $mutatedChildValues[$arrayIndex] = $value + Launcher::$valueMutation;
+            $mutatedChildValues[$arrayIndex] = $value + Evolutor::$valueMutation;
             $arrayIndex++;
         }
         $mutatedChild->setValues($mutatedChildValues);
