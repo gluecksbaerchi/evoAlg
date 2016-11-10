@@ -8,6 +8,8 @@
  */
 class Evolutor
 {
+    public $config;
+
     /**
      * @var array
      */
@@ -26,7 +28,7 @@ class Evolutor
     /**
      * @var int
      */
-    public static $amountGenerations = 2000;
+    public static $amountGenerations = 500;
 
     /**
      * @var int
@@ -55,6 +57,11 @@ class Evolutor
      */
     public static $valueMutation = 10;
 
+    public function __construct($config)
+    {
+        $this->config = $config;
+    }
+
     public function startEvolution()
     {
 
@@ -66,12 +73,14 @@ class Evolutor
             $individual->setFitness(FitnessCalculator::functionA($individual));
         }
 
-        for( $i = 0; $i < self::$amountGenerations; $i++) {
-            $pGen = $this->createGeneration($tmp);
-            $tmp = EnvironmentSelector::bestFitness($tmp, $pGen);
+        for( $i = 1; $i <= self::$amountGenerations; $i++) {
+            $pGen = $this->createGeneration($tmp, $i);
+            $method = $this->config['environmentSelector'];
+            $tmp = EnvironmentSelector::$method($tmp, $pGen);
         }
         $winner = $tmp[0];
-        var_dump($winner);
+        // var_dump($winner);
+        return $winner;
     }
 
     public function initiateIndividuals()
@@ -100,21 +109,25 @@ class Evolutor
         return $individual;
     }
 
-    public function createGeneration (array $individualList) {
+    public function createGeneration (array $individualList, int $generation) {
 
         $pGen = [];
 
         while(count($pGen) < self::$amountIndividualsPerGeneration) {
 
             //Selektion der Eltern
-            $parentA = rand(0,(count($individualList)-1));
-            $parentB = rand(0,(count($individualList)-1));
+            do {
+                $parentA = rand(0,(count($individualList)-1));
+                $parentB = rand(0,(count($individualList)-1));
+            } while ($parentA == $parentB);
 
             // Rekombination machen.. aber nur wenn $propabilityRecombination.
             if(rand(0,100) <= self::$probabilityRecombination) {
-                $child = Recombinator::random($individualList[$parentA], $individualList[$parentB]);
+                $method = $this->config['recombinator'];
+                $child = Recombinator::$method($individualList[$parentA], $individualList[$parentB]);
                 if(rand(0,100) <= self::$probabilityMutation) {
-                    $child = Mutator::constant($child);
+                    $method = $this->config['mutator'];
+                    $child = Mutator::$method($child, $generation);
                 }
                 $child->setFitness(FitnessCalculator::functionA($child));
                 $pGen[] = $child;
