@@ -24,7 +24,8 @@ class EnvironmentSelector
         };
 
         $combined = array_merge($parents, $children);
-        return usort($combined, $compare);
+        usort($combined, $compare);
+        return $combined;
     }
     
     
@@ -35,7 +36,7 @@ class EnvironmentSelector
      */
     public static function bestFitness($parents, $children)
     {
-        $combined = $this->applyFitness($parents, $children);
+        $combined = self::applyFitness($parents, $children);
         return array_slice($combined, 0, Evolutor::$amountSurvivingIndividuals);
     }
 
@@ -47,7 +48,7 @@ class EnvironmentSelector
      */
     public static function roulette($parents, $children)
     {
-        $combined = $this->applyFitness($parents, $children);        
+        $combined = self::applyFitness($parents, $children);
         $tmp = [];
         for ( $i = 0; $i < Evolutor::$amountSurvivingIndividuals; $i++) {
             $rand = Evolutor::random(0, 1);

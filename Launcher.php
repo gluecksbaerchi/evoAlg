@@ -8,10 +8,13 @@ require_once "Mutator.php";
 require_once "Evolutor.php";
 
 $config = [
+    //'fitnessCalculator' => 'functionA',
+    'fitnessCalculator' => 'griewank',
     //'mutator' => 'constant',
     'mutator' => 'generationDependent',
     'recombinator' => 'random',
-    'environmentSelector' => 'bestFitness'
+    //'environmentSelector' => 'bestFitness',
+    'environmentSelector' => 'roulette'
 ];
 
 $launcher = new Evolutor($config);

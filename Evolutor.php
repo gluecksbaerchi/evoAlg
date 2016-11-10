@@ -13,7 +13,7 @@ class Evolutor
     /**
      * @var array
      */
-    public static $numberRangeInitialPopulation = ['min' => -10, 'max' => 10];
+    public static $numberRangeInitialPopulation = ['min' => -512, 'max' => 511];
 
     /**
      * @var int
@@ -23,12 +23,12 @@ class Evolutor
     /**
      * @var int
      */
-    public static $amountVariables = 4;
+    public static $amountVariables = 5; // n = 5; 10; 15; 20; 25; 30; 40;...
 
     /**
      * @var int
      */
-    public static $amountGenerations = 500;
+    public static $amountGenerations = 2000;
 
     /**
      * @var int
@@ -55,7 +55,7 @@ class Evolutor
     /**
      * @var int
      */
-    public static $valueMutation = 10;
+    public static $valueMutation = 5;
 
     public function __construct($config)
     {
@@ -69,8 +69,9 @@ class Evolutor
 
         $tmp = $this->initiateIndividuals();
         foreach ($tmp as $individual) {
+            $method = $this->config['fitnessCalculator'];
             /** @var Individual $individual */
-            $individual->setFitness(FitnessCalculator::functionA($individual));
+            $individual->setFitness(FitnessCalculator::$method($individual));
         }
 
         for( $i = 1; $i <= self::$amountGenerations; $i++) {
@@ -127,9 +128,11 @@ class Evolutor
                 $child = Recombinator::$method($individualList[$parentA], $individualList[$parentB]);
                 if(rand(0,100) <= self::$probabilityMutation) {
                     $method = $this->config['mutator'];
+                    /** @var Individual $child */
                     $child = Mutator::$method($child, $generation);
                 }
-                $child->setFitness(FitnessCalculator::functionA($child));
+                $method = $this->config['fitnessCalculator'];
+                $child->setFitness(FitnessCalculator::$method($child));
                 $pGen[] = $child;
             }
         }
