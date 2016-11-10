@@ -17,7 +17,7 @@ class Individual
      * @var double
      */
     private $fitness;
-
+        
     /**
      * @return array
      */
