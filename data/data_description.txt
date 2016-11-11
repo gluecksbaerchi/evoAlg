@@ -1,0 +1,10 @@
+data2.json (both with roulette selection) | data3.json:
+$numberRangeInitialPopulation = ['min' => -512, 'max' => 511];
+$amountStartIndividuals = 30;
+$amountVariables = 15;
+$amountGenerations = 1000;
+$amountIndividualsPerGeneration = 30;
+$amountSurvivingIndividuals = 15;
+$probabilityRecombination = 33;
+$probabilityMutation = 10;
+$valueMutation = 5;
