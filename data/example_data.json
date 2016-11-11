@@ -1,0 +1,19 @@
+{
+  "cols": [
+    {"id":"","label":"","pattern":"","type":"number"},
+    {"id":"","label":"bla","pattern":"","type":"number"},
+    {"id":"","label":"blub","pattern":"","type":"number"}
+  ],
+  "rows": [
+    {"c":[{"v":1,"f":null},{"v":2.2,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":2,"f":null},{"v":0.9,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":3,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":4,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":5,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":6,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":7,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":8,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":9,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]},
+    {"c":[{"v":10,"f":null},{"v":1.3,"f":null},{"v":2.2,"f":null}]}
+  ]
+}

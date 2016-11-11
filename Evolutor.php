@@ -18,27 +18,27 @@ class Evolutor
     /**
      * @var int
      */
-    public static $amountStartIndividuals = 10;
+    public static $amountStartIndividuals = 30;
 
     /**
      * @var int
      */
-    public static $amountVariables = 5; // n = 5; 10; 15; 20; 25; 30; 40;...
+    public static $amountVariables = 15; // n = 5; 10; 15; 20; 25; 30; 40;...
 
     /**
      * @var int
      */
-    public static $amountGenerations = 2000;
+    public static $amountGenerations = 1000;
 
     /**
      * @var int
      */
-    public static $amountIndividualsPerGeneration = 40;
+    public static $amountIndividualsPerGeneration = 30;
 
     /**
      * @var int
      */
-    public static $amountSurvivingIndividuals = 10;
+    public static $amountSurvivingIndividuals = 15;
 
     /**
      * in %
@@ -80,7 +80,6 @@ class Evolutor
             $tmp = EnvironmentSelector::$method($tmp, $pGen);
         }
         $winner = $tmp[0];
-        // var_dump($winner);
         return $winner;
     }
 
