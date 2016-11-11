@@ -117,15 +117,15 @@ class Evolutor
 
             //Selektion der Eltern
             do {
-                $parentA = rand(0,(count($individualList)-1));
-                $parentB = rand(0,(count($individualList)-1));
+                $parentA = mt_rand(0,(count($individualList)-1));
+                $parentB = mt_rand(0,(count($individualList)-1));
             } while ($parentA == $parentB);
 
             // Rekombination machen.. aber nur wenn $propabilityRecombination.
-            if(rand(0,100) <= self::$probabilityRecombination) {
+            if(mt_rand(0,100) <= self::$probabilityRecombination) {
                 $method = $this->config['recombinator'];
                 $child = Recombinator::$method($individualList[$parentA], $individualList[$parentB]);
-                if(rand(0,100) <= self::$probabilityMutation) {
+                if(mt_rand(0,100) <= self::$probabilityMutation) {
                     $method = $this->config['mutator'];
                     /** @var Individual $child */
                     $child = Mutator::$method($child, $generation);
@@ -148,7 +148,7 @@ class Evolutor
             $max = $a * (10 ** $decimal);
             $min = $b * (10 ** $decimal);
         }
-        $number = rand($min, $max) / (10**$decimal);
+        $number = mt_rand($min, $max) / (10**$decimal);
         return $number;
     }
 }

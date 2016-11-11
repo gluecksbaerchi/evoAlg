@@ -61,14 +61,11 @@ $cols = [
 
 $rows = [];
 
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 50; $i++) {
     $valueConstantMutation = $evConstant->startEvolution()->getFitness();
     $valueGenDepMutation = $evGenDep->startEvolution()->getFitness();
     $valueConstantMutationBF = $evConstantBF->startEvolution()->getFitness();
     $valueGenDepMutationBF = $evGenDepBF->startEvolution()->getFitness();
-
-    var_dump($valueGenDepMutationBF);
-    echo '<br/>';
 
     $rows[] = [
         'c' => [
