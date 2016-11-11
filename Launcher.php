@@ -55,17 +55,20 @@ $cols = [
     ['id' => "", 'label' => '', 'pattern' => '', 'type' => 'number'],
     ['id' => "", 'label' => 'constant mutation | roulette selection', 'pattern' => '', 'type' => 'number'],
     ['id' => "", 'label' => 'generation dependent mutation | roulette selection', 'pattern' => '', 'type' => 'number'],
-    ['id' => "", 'label' => 'generation dependent mutation | best fitness selection', 'pattern' => '', 'type' => 'number'],
+    ['id' => "", 'label' => 'constant mutation | best fitness selection', 'pattern' => '', 'type' => 'number'],
     ['id' => "", 'label' => 'generation dependent mutation | best fitness selection', 'pattern' => '', 'type' => 'number'],
 ];
 
 $rows = [];
 
-for ($i = 1; $i <= 50; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $valueConstantMutation = $evConstant->startEvolution()->getFitness();
     $valueGenDepMutation = $evGenDep->startEvolution()->getFitness();
     $valueConstantMutationBF = $evConstantBF->startEvolution()->getFitness();
     $valueGenDepMutationBF = $evGenDepBF->startEvolution()->getFitness();
+
+    var_dump($valueGenDepMutationBF);
+    echo '<br/>';
 
     $rows[] = [
         'c' => [
@@ -79,7 +82,7 @@ for ($i = 1; $i <= 50; $i++) {
 }
 
 $arr_data = ['cols' => $cols, 'rows' => $rows];
-$myFile = "data/data3.json";
+$myFile = "data/data5.json";
 $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
 try {
     file_put_contents($myFile, $jsondata);

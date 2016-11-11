@@ -8,3 +8,10 @@ $amountSurvivingIndividuals = 15;
 $probabilityRecombination = 33;
 $probabilityMutation = 10;
 $valueMutation = 5;
+
+data4.json
+$amountVariables = 40;
+-> PC reaches limits
+
+data5.json
+testing

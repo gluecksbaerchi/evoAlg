@@ -21,7 +21,7 @@
             var options = {
                 title: 'Griewank Evolution',
                 curveType: 'function',
-                legend: { position: 'bottom', maxLines: 2}
+                legend: { position: 'top', maxLines: 2, textStyle: {fontSize: 13}}
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -31,6 +31,6 @@
     </script>
 </head>
 <body>
-<div id="curve_chart" style="width: 1500px; height: 500px"></div>
+<div id="curve_chart" style="width: 1350px; height: 500px"></div>
 </body>
 </html>
