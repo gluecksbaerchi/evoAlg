@@ -22,6 +22,21 @@ class Mutator
             + Evolutor::$valueMutation;
         return self::mutate($child, $actualValueMutation);
     }
+    
+    /**
+     * @param Individual $child
+     * @param int $generation
+     * @return Individual
+     */
+    public static function generationDependentExponential(Individual $child, int $generation)
+    {
+        // Exponential Decreasing Function like: a*e^(-b*x)
+        // 'Gute' Function fü 1000 Generationen bei 4b = 0,005 -> über Dreisatz auf Generationenabhängiges $b.
+        $a = Evolutor::$valueMutation;
+        $b = (0.005/(Evolutor::$amountGenerations/1000));
+        $actualValueMutation = ($a * M_E^(-$b * $generation));        
+        return self::mutate($child, $actualValueMutation);
+    }
 
     /**
      * @param Individual $child
