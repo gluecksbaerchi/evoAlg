@@ -64,9 +64,6 @@ class Evolutor
 
     public function startEvolution()
     {
-
-//      alles aus Formular rausholen
-
         $tmp = $this->initiateIndividuals();
         foreach ($tmp as $individual) {
             $method = $this->config['fitnessCalculator'];
