@@ -15,3 +15,25 @@ $amountVariables = 40;
 
 data5.json
 testing
+
+//////////////////////////
+
+data6.json
+$amountGenerations = 1000;
+$amountVariables = 15;
+
+data7.json
+$amountGenerations = 1000;
+$amountVariables = 40;
+
+data8.json
+$amountGenerations = 1000;
+$amountVariables = 5;
+
+data9.json
+$amountGenerations = 500;
+$amountVariables = 15;
+
+data10.json
+$amountGenerations = 2000;
+$amountVariables = 15;
