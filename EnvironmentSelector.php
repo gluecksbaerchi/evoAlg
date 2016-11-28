@@ -40,7 +40,6 @@ class EnvironmentSelector
         return array_slice($combined, 0, Evolutor::$amountSurvivingIndividuals);
     }
 
-    // Todo: other selection functions (roulette, turnament)
     /**
      * @param Individual[] $parents
      * @param Individual[] $children

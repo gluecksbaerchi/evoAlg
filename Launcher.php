@@ -49,15 +49,6 @@ $configConstantBF = [
     'environmentSelector' => 'bestFitness',
 ];
 
-//$launcher = new Evolutor($config);
-//
-//$result = 0;
-//$count = 50;
-//for ($i = 0; $i < $count; $i++) {
-//    $result += $launcher->startEvolution()->getFitness();
-//}
-//var_dump($result/$count);
-
 var_dump('start');
 
 $evGenDepLin = new Evolutor($configGenDepLin);
