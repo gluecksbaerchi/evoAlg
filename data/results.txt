@@ -1,0 +1,71 @@
+jeweils 50 Programmdurchläufe:
+
+Diagramm data6 | 15 Variablen | 1000 Generationen
+min/max/average constant mutation / roulette
+0.624335 / 1.220098 / 1.00766278
+min/max/average gen dep linear mutation / roulette
+0.034043 / 1.147163 / 0.20277722
+min/max/average gen dep exponential mutation / roulette
+0.964635 / 1.265119 / 1.14442104
+min/max/average constant mutation / best fitness
+0.60395 / 1.124847 / 0.93904688
+min/max/average gen dep linear mutation / best fitness
+0.033356 / 0.692972 / 0.1439869
+min/max/average gen dep exponential mutation / best fitness
+0.858035 / 1.330507 / 1.13165292
+
+Diagramm data7 | 40 Variablen | 1000 Generationen
+min/max/average constant mutation / roulette
+1.03349 / 1.099886 / 1.05762686
+min/max/average gen dep linear mutation / roulette
+0.391162 / 1.6094 / 0.67858856
+min/max/average gen dep exponential mutation / roulette
+1.257015 / 1.583797 / 1.41750528
+min/max/average constant mutation / best fitness
+1.017803 / 1.065762 / 1.0453649
+min/max/average gen dep linear mutation / best fitness
+0.251239 / 0.607241 / 0.43612496
+min/max/average gen dep exponential mutation / best fitness
+1.195062 / 1.591321 / 1.37920222
+
+Diagramm data8 | 5 Variablen | 1000 Generationen
+min/max/average constant mutation / roulette
+0.066519 / 5.333605 / 1.91847474
+min/max/average gen dep linear mutation / roulette
+0.118488 / 7.32001 / 2.04336866
+min/max/average gen dep exponential mutation / roulette
+0.065819 / 1.721482 / 0.7082947
+min/max/average constant mutation / best fitness
+0.08362 / 2.440297 / 0.61882636
+min/max/average gen dep linear mutation / best fitness
+0.025579 / 2.006557 / 0.44657382
+min/max/average gen dep exponential mutation / best fitness
+0.034437 / 0.809506 / 0.32406822
+
+Diagramm data9 | 15 Variablen | 500 Generationen
+min/max/average constant mutation / roulette
+0.809244 / 1.099751 / 1.00427316
+min/max/average gen dep linear mutation / roulette
+0.101442 / 2.547177 / 0.5237978
+min/max/average gen dep exponential mutation / roulette
+1.019796 / 1.307104 / 1.16900484
+min/max/average constant mutation / best fitness
+0.69697 / 2.280978 / 1.0056188
+min/max/average gen dep linear mutation / best fitness
+0.065979 / 1.157439 / 0.23973304
+min/max/average gen dep exponential mutation / best fitness
+0.652762 / 1.422564 / 1.13154992
+
+Diagramm data10 | 15 Variablen | 2000 Generationen
+min/max/average constant mutation / roulette
+0.530939 / 1.243912 / 0.98451892
+min/max/average gen dep linear mutation / roulette
+0.022644 / 0.877496 / 0.10142252
+min/max/average gen dep exponential mutation / roulette
+0.967495 / 1.387021 / 1.1325899
+min/max/average constant mutation / best fitness
+0.615019 / 1.530295 / 0.93390894
+min/max/average gen dep linear mutation / best fitness
+0.017003 / 0.837453 / 0.1222565
+min/max/average gen dep exponential mutation / best fitness
+0.968227 / 1.295926 / 1.1179449
